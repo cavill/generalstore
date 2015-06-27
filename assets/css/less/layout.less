@@ -1,0 +1,499 @@
+/*
+ * Skeleton V1.2
+ * Copyright 2011, Dave Gamache
+ * www.getskeleton.com
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 6/20/2012
+ */
+
+// Table of Content
+// ==================================================
+//  #Site Styles
+//  #Page Styles
+//  #Media Queries
+//  #Font-Face
+
+// #Site Styles
+// ==================================================
+
+.loading {
+  background-color: @black; //fade(@black, 70%);
+  position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 101;
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0 -12px;
+  }
+}
+
+.noscript {
+  color: @white!important;
+  z-index: 200;
+  background: @black;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  h4, a {
+    color: @white;
+  }
+  small {
+    letter-spacing: 0.1em;
+  }
+}
+
+body {
+  text-align: center;
+  overflow-y: auto;
+  height: 100%;
+  &.debug * {
+    outline: 1px solid red;
+  }
+}
+
+a {
+  transition: all 0.2s ease-out;
+}
+
+.container {
+  padding: @sitePadding 0;
+}
+
+.content {
+  z-index: 10;
+  position: relative;
+  overflow-x: hidden;
+  
+  background-color: @white;
+}
+
+.vine-start {
+  // ensure text is legible
+  p {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 1px @white;
+  }
+}
+
+img {
+  width: 100%;
+  &.link-social {
+    width: 48px;
+  }
+}
+
+header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  z-index: 50;
+  //background: center center / cover fixed;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: @primary;
+  background-repeat: no-repeat;
+
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+
+  height: 100%;
+  overflow: hidden;
+  color: @white;
+
+  min-height: 320px;
+
+  // -webkit-transition: background .2s linear;
+  //    -moz-transition: background .2s linear;
+  //      -o-transition: background .2s linear;
+  //         transition: background .2s linear;
+
+  .main-logo {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 360px;
+    height: 360px;
+    margin: -180px 0 0 -180px;
+  }
+
+  .photography {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    opacity: 0.5;
+
+    width: 30px;
+    height: 20px;
+
+    background: url(../img/fox.svg) no-repeat;
+    transition: all 0.2s ease-out;
+    &:hover {
+      width: 162px;
+      opacity: 0.9;
+    }
+    a {
+      display: inline-block;
+      float: left;
+      height: 20px;
+    }
+    .camera a {
+      width: 30px;
+    }
+    .fox a {
+      width: 130px;
+    }
+    b {
+      display: none;
+    }
+  }
+
+  // Dim the BG photos
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,0.2);
+  }
+}
+
+#modal * {
+  .box-sizing();
+}
+
+.opening-link {
+  font-size: 0.85em;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  line-height: 1.2em;
+  z-index: 0;
+  span.break {
+    .break();
+  }
+  &.ontop {
+    z-index: 95;
+    position: fixed;
+  }
+  &:link, &:visited, &:hover, &:active {
+    text-decoration: none;
+    color: @white;
+  }
+  .remove-specing {
+    letter-spacing: 0em;
+  }
+}
+
+.full-cover {
+  position: static;
+  z-index: 10;
+}
+
+.faux-footer {
+  position: relative;
+  z-index: -1;
+}
+
+footer {
+  
+  z-index: 1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background: @black;
+
+  color: fade(@white,80%);
+  font-size: 0.9em;
+  p {
+    margin: -1.75em 0 0; 
+  }
+  .container {
+    padding: 0; // because padding is coming from the js
+  }
+
+  a:link, a:visited {
+    color: fade(@white,80%);
+    border: none;
+  }
+  a:hover, a:active {
+    color: @white;
+  }
+  .small-logo {
+    max-width: 160px;
+    margin: 0 auto 1em;
+    display: block;
+  }
+}
+
+.hours {
+  dl {
+    width: 100%;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    padding: 1.5em 0 0.8em;
+    dt, dd {
+      width: 50%;
+      float: left;
+      padding-bottom: 0.5em;
+        &:after {
+          clear: left;
+        }
+    }
+    dt {
+      text-align: right;
+      padding-right: 10px;
+    }
+    dd {
+      text-align: left;
+      padding-left: 10px;
+    }
+  }
+}
+
+// #Page Styles
+// ==================================================
+
+// Insta feed
+
+#instafeed {
+  margin: 0;
+  padding: 0;
+  li {
+    float: left;
+    margin: 0;
+    padding: 0;
+
+    width: 25%;
+    height: 0;
+    padding-bottom: 25%;
+  }
+}
+
+// email
+
+.mailchimp {
+  label span {
+    display: none;
+  }
+  input[type=email] {
+    .box-sizing();
+    font-family: @bodyFontFamily;
+    font-weight: 100;
+    letter-spacing: 0.07em;
+    color: @bodyColor;
+
+    font-size: 2.3em; // match cta
+    padding: 0.5em;
+    border: none;
+    border-bottom: 1px solid fade(@black, 50%);
+    text-align: center;
+    width: 100%;
+    -webkit-font-smoothing:antialiased;
+    &::-webkit-input-placeholder {
+      color: @bodyColor;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+       color: @bodyColor;  
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+       color: @bodyColor;  
+    }
+
+    &:-ms-input-placeholder {  
+       color: @bodyColor;  
+    }
+    &:focus {
+      .box-shadow(none);
+        &::-webkit-input-placeholder {
+           opacity: 0;
+        }
+
+        &:-moz-placeholder { /* Firefox 18- */
+           opacity: 0;  
+        }
+
+        &::-moz-placeholder {  /* Firefox 19+ */
+           opacity: 0;  
+        }
+
+        &:-ms-input-placeholder {  
+           opacity: 0;  
+        }
+    }
+  }
+}
+
+
+// #Media Queries
+// ==================================================
+
+  /* Larger than standard 960 (browsers) */
+  @media only screen and (min-width: 960px) {
+
+    .content {
+      .vines {
+        position: absolute;
+        top: 2%;
+        height: 730px;
+        transition: opacity 1.5s ease-out;
+        opacity: 0;
+
+        &.tomato {
+          width: 386px;
+          left: -140px;
+          background: url("../img/tomato-vine.png") 0 0 no-repeat;
+        }
+        &.grapes {
+          width: 580px;
+          right: -310px;
+          background: url("../img/grapes.png") 0 0 no-repeat;
+        }
+        &.show {
+          opacity: 1;
+        }
+      }
+    }
+    .mailing {
+      .break {
+        .break();
+      }
+    }
+    footer {
+      .small-logo {
+        margin-top: -40%;
+      }
+    }
+  }
+
+
+  /* Smaller than standard 960 (devices and browsers) */
+  @media only screen and (max-width: 959px) {}
+
+  /* Tablet Portrait size to standard 960 (devices and browsers) */
+  @media only screen and (min-width: 768px) and (max-width: 959px) {
+    footer {
+      .small-logo {
+        margin-top: -40%;
+      }
+    }
+  }
+
+  /* All Mobile Sizes (devices and browser) */
+  @media only screen and (max-width: 767px) {
+    body {
+      font-size: (@bodyFontSize*0.8);
+    }
+    .container {
+      padding: 1.5em 0; 
+    }
+    section, footer, header {
+      position: relative;
+    }
+    header {
+      background-attachment: scroll;
+      .main-logo {
+        width: 210px;
+        height: 210px;
+        margin: -105px 0 0 -105px;
+      }
+    }
+    .faux-footer {
+      display: none;
+    }
+    #instafeed {
+      li {
+        width: 50%;
+        height: 0;
+        padding-bottom: 50%;
+      }
+    }
+    .opening-link {
+      font-weight: 400;
+    }
+    footer {
+      padding-top: 2em!important;
+      .row {
+        padding-bottom: 1em;
+      }
+      p {
+        margin: 0 0 1.2em;
+        .break {
+          .break();
+        }
+      }
+    }
+  }
+
+  /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+  @media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+  /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+  @media only screen and (max-width: 479px) {
+
+    header {
+      .opening-link {
+        right: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+
+    footer {
+      .container {
+        padding: 0!important;
+      }
+    }
+
+    .faux-footer {
+      p {
+        margin: 0 0 1em;
+      }
+    }
+
+  }
+
+
+// #Font-Face
+// ==================================================
+//  This is the proper syntax for an @font-face file
+//  Just create a "fonts" folder at the root,
+//  copy your FontName into code below and remove
+//  comment brackets
+
+/*  @font-face {
+      font-family: 'FontName';
+      src: url('../fonts/FontName.eot');
+      src: url('../fonts/FontName.eot?iefix') format('eot'),
+           url('../fonts/FontName.woff') format('woff'),
+           url('../fonts/FontName.ttf') format('truetype'),
+           url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
+      font-weight: normal;
+      font-style: normal; }
+*/

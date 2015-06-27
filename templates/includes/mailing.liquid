@@ -1,0 +1,19 @@
+<section class="full-cover">
+	<div class="container">
+		<div class="ten columns offset-by-three">
+			<p class="mailing">Join our mailing list to be the first to <span class="break">hear about new additions in-store</span></p>
+			<script>
+				function process() {
+					var url="http://generalsto.us6.list-manage.com/subscribe?u=0c77daa7e1d12d6387abae286&id=e6c9a65312&MERGE0=" + document.getElementById("emaila").value;
+					location.href=url;
+					return false;
+				}
+			</script>
+			<form class="mailchimp" onSubmit="return process();">
+				<label for="email"><span>Email</span>
+					<input type="email" name="email" id="emaila" placeholder="your@email.com">
+				</label>
+			</form>
+		</div>
+	</div>
+</section>
